@@ -1,4 +1,4 @@
-# ropsaurusrex
+# ropasaurusrex
 
 About this binary.
 
