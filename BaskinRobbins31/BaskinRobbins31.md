@@ -12,7 +12,7 @@ checksec ./BaskinRobbins31
 
 This binary has `NX-bit` and `Partical RELRO`.
 
-And here is disassemled code.
+And here is disassembled code.
 
 ```c
 signed __int64 __fastcall your_turn(_DWORD *a1)
